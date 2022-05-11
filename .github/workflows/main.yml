@@ -1,5 +1,5 @@
 name: CI/CD
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
 
@@ -31,7 +31,7 @@ jobs:
         name: apk-build
         path: build/app/outputs/apk/release/app-release.apk
     - name: Deploy
-      if: (github.base_ref == 'master' && github.event_name == 'pull_request')
+      if: (github.base_ref == 'master' && github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
       uses: wzieba/Firebase-Distribution-Github-Action@v1
       with:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
