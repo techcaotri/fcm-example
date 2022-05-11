@@ -32,9 +32,9 @@ jobs:
         name: apk-build
         path: build/app/outputs/apk/release/app-release.apk
     - name: Deploy
-        if: ${{ github.base_ref == 'master' && github.event_name == 'pull_request' }}
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
-        with:
+      if: (github.base_ref == 'master' && github.event_name == 'pull_request')
+      uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
+      with:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: testers
