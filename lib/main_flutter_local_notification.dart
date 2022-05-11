@@ -141,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     FirebaseMessaging.instance.subscribeToTopic("all");
-    var a = 5;
+    var a = 6;
   }
 
   void showNotification() {
