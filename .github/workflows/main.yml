@@ -30,5 +30,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: apk-build
-        path: build/app/outputs/bundle/release
-        file: build/app/outputs/apk/release/app-release.apk
+        path: build/app/outputs/apk/release/app-release.apk
