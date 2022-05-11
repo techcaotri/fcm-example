@@ -23,7 +23,7 @@ jobs:
         --output $HOME/secrets/secrets.tar secrets.tar.gpg
         tar xvf $HOME/secrets/secrets.tar
         flutter build appbundle
-        flutter build apk
+        flutter build apk -t lib/main_flutter_local_notification.dart
       env:
         SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
     - name: Upload
